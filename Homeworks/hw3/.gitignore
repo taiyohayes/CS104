@@ -1,0 +1,6 @@
+*.o
+*.in
+hw3_heap_checker
+hw3_stu_tests
+stackTest
+.DS_Store

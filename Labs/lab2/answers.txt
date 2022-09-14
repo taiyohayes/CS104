@@ -1,0 +1,36 @@
+Problem 1
+• Error on line 249
+• The pointer "invaders[invaderRow][invaderCol]" is null, because a new Warrior is being allocated for "invader[invaderRow][invaderRow]".
+• Change the second array index to invaderCol:
+	invaders[invaderRow][invaderCol] = new Warrior();
+
+Problem 2
+• Error on line 27
+• There was a semicolon mistakenly put after the closing parentheses of the if statement, before the open bracket of the following code. This prevented the code within the if statement from being run, and the result would never return "result_protector"
+• Delete the unneeded semicolon:
+	if (protector->weapon == weapon_axe && invader->weapon == weapon_sword)
+
+Problem 3
+• Error on line 62
+• The inner for loop in the findOpenInvaderPos function did not have a 3rd statement. Therefore the value of colIdx was remaining the same for each iteration of the loop, and the if statement inside the loop was never satisfied.
+• Add a final statement to the for loop so that the value of colIdx increases with each iteration:
+	for (int colIdx = 0; colIdx < numCols; ++colIdx)
+
+Problem 4
+• Error on line 218
+• Call to deallocation function was not correct. The rows and columns for the protectors and invaders arrays should be inverted from one another; in this code they were the same when deallocation was called, but correct when allocated. Resulted in seg fault
+• Call to the deallocation of invaders should be:
+	DeallocateWarriors(invaders, m, n);
+
+
+Problem 5
+• Error on lines 113 and 117
+• protectorLost should be made true if the invader has a greater power than the invader, and should remain false if the opposite is true. The code for this was reversed, meaning that although the protector had greater power, the code was making it so the protector was killed. The invader should be the one being killed.
+• Swap < for > :
+      if (invader->power > protector->power)
+      {
+        protectorLost = true;
+      }
+      else if (protector->power > invader->power)
+      {
+        delete invader;

@@ -1,0 +1,35 @@
+Problem 1
+A) Unmodified
+
+B) README.md: modified
+fun_problem.txt: untracked
+
+C) staged (both)
+
+D) modified (both)
+
+E) README.md: staged
+
+F) 
+
+Problem 2
+A) 1. TAB
+
+B) clean the makefile to delete generated files. compile shape1 with the given flags using c++ 11. parameters are dependencies (shape.h) and the target name
+
+C) To make sure that make runs clean, and does not associate "clean" with some file of the same name in the directory
+
+D) 2. Makefile  4. Makefile
+
+Problem 4
+1) a data type to store the text of the steps of a recipe for how to bake a cake.
+	A list of instructions (strings). Each instruction can have an index corresponding to its order in the recipe, and incrementing through the indexes allows you to follow the recipe. Alternatively, could use a queue.
+
+2) a data type that stores all the TV station identifications (e.g. KABC, KNBC, etc.) so we can ensure new stations don't reuse the same identification.
+	A set of stations IDs (strings). No ordering is necessary, and no repeats will be allowed. This will ensure that new stations cannot pick an existing name.
+
+3)a data type that stores what players (assume names are unique) are on each team (given by the team name) in a league and allows quick checks whether a given player is on a particular team.
+	A map with keys being names (strings) and the value being the player's team (strings) This will allow user to look up the players name and easily identify which team they play for.
+
+4) a data type that associates a file extension (e.g. cpp, pdf) with the possible programs that are able to read/open that kind of file
+	a map of file extensions (strings) as keys, and the possible programs (strings) as the values this will allow the user to quickly search for a file type and then access the necessary information based on that name
